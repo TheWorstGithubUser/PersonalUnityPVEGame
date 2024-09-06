@@ -1,2 +1,2 @@
-# PersonalUnityPVEGame
-A personal project for myself, Dakota Castle, in which I intend to create a PvE game. More in README
+This is a personal project for a 2.5d class-based PvE game. All of the code is written by me, unless credited otherwise. 
+The game is developed in the Unity engine
