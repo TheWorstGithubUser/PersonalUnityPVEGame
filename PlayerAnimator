@@ -1,0 +1,30 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class PlayerAnimator : MonoBehaviour
+{
+    private Animator animator;
+    private const string RUN_DIRECTIONX = "RunDirectionX";
+    private const string RUN_DIRECTIONY = "RunDirectionY";
+    private const string IS_WALKING = "IsWalking";
+    private bool IsWalking;
+
+    [SerializeField] private playerMovement playerMovementScript;
+    private float playerX;
+    private float playerY;
+
+    private void Awake(){
+        animator = GetComponent<Animator>();
+    }
+    
+    private void Update(){
+        IsWalking = playerMovementScript.GetIsWalking();
+        if(IsWalking == true){
+            animator.SetFloat(RUN_DIRECTIONX, playerMovementScript.GetPlayerDirectionX());
+            animator.SetFloat(RUN_DIRECTIONY, playerMovementScript.GetPlayerDirectionZ());
+        }
+        animator.SetBool(IS_WALKING, IsWalking);
+    }
+
+}
